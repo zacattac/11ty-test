@@ -28,6 +28,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("posts", function (collection) {
     return collection.getFilteredByGlob("post/*.md").reverse();
   });
+  eleventyConfig.addCollection("metaPosts", function (collection) {
+    return collection.getFilteredByGlob("meta/*.md").reverse();
+  });
 
   eleventyConfig.setLibrary("md", remark());
 

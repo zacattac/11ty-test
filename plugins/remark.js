@@ -5,6 +5,7 @@ const slug = require("remark-slug");
 const footnotes = require("remark-footnotes");
 const html = require("remark-html");
 const all = require("mdast-util-to-hast/lib/all");
+
 const customFootnotes = require("../helpers/footnotes");
 const references = require("../helpers/references");
 const imagesWithCaptions = require("../helpers/imagesWithCaptions");
@@ -12,8 +13,9 @@ const imagesWithCaptions = require("../helpers/imagesWithCaptions");
 const findByID = require("../filters/findByID");
 const responsiveImage = require("../shortcodes/responsiveImage");
 
-module.exports = function remark(rawMarkdown, assets) {
-  const processor = unified()
+function renderMarkdown(rawMarkdown, assets) {
+  let result;
+  unified()
     .use(markdown)
     .use(slug)
     .use(footnotes)
@@ -85,13 +87,20 @@ module.exports = function remark(rawMarkdown, assets) {
           return h(node, "img", { ...imageAttrs }, all(h, node));
         },
       },
+    })
+    .process(rawMarkdown, (err, output) => {
+      if (err) throw err;
+      result = output.contents;
     });
 
+  return result;
+}
+
+module.exports = function remark() {
   return {
     set: () => {},
-    render: async (str) => {
-      const { contents } = await processor.process(str);
-      return contents;
+    render: async (str, data) => {
+      return renderMarkdown(str, data.assets);
     },
   };
 };
