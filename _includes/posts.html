@@ -1,15 +1,15 @@
 <ol class="flow | gap-large">
-  {% for post in posts %}
+  {% for post in collections.posts %}
   <li>
     <a
-      href="{{ postParent }}/post/{{ post.fields.slug }}/"
-      aria-label="Post: {{ post.fields.title }}"
+      href="{{ post.url }}"
+      aria-label="Post: {{ post.title }}"
     >
-      {{ post.fields.title }}
+      {{ post.data.title }}
     </a>
     <p>
       <span class="visually-hidden">Published:</span>
-      <em>{{ post.sys.createdAt | formatDate("long") }}</em>
+      <em>{{ post.date | formatDate("long") }}</em>
     </p>
   </li>
   {% endfor %}

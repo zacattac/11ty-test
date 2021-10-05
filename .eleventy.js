@@ -27,6 +27,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addShortcode("renderMarkdown", markdown);
   eleventyConfig.addShortcode("responsiveImage", responsiveImage);
 
+  eleventyConfig.addCollection("posts", function (collection) {
+    return collection.getFilteredByGlob("post/*.md").reverse();
+  });
+
   eleventyConfig.setLibrary("md", remark());
 
   return {

@@ -10,13 +10,12 @@ class Posts {
   }
 
   render(data) {
-    const posts = data.posts.map((post) => ({
-      id: post.sys.id,
-      content_html: this.renderMarkdown(post.fields.contentMarkdown),
-      url: `https://interroban.gg/posts/${post.fields.slug}`,
-      summary: post.fields.description,
-      date_published: post.sys.createdAt,
-      title: post.fields.title,
+    const posts = data.collections.posts.map((post) => ({
+      content_html: post.templateContent,
+      url: `https://interroban.gg/posts/${post.url}`,
+      summary: post.data.description,
+      date_published: post.date,
+      title: post.data.title,
     }));
 
     const wrapper = {
