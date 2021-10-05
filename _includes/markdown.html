@@ -1,0 +1,13 @@
+---
+layout: layout.html
+---
+{% from '_includes/stats.html' import stats %}
+<header class="flow | gap-x-large">
+  <h1 class="headline | measure | gap-large">{{ title }}</h1>
+  <div class="flow" style="--flow-space: var(--space-default)">
+    {{ stats(updatedDate = date, readableContent = content ) }}
+  </div>
+</header>
+<article class="markdown | flow | gap-xx-large">
+  {% renderMarkdown content %}
+</article>

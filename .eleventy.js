@@ -8,6 +8,7 @@ const date = require("./filters/date");
 const JsonStringify = require("./filters/json");
 const markdown = require("./shortcodes/markdown");
 const responsiveImage = require("./shortcodes/responsiveImage");
+const remark = require("./plugins/remark");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRSS);
@@ -25,6 +26,8 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addShortcode("renderMarkdown", markdown);
   eleventyConfig.addShortcode("responsiveImage", responsiveImage);
+
+  eleventyConfig.setLibrary("md", remark());
 
   return {
     htmlTemplateEngine: "njk",
