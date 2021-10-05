@@ -1,0 +1,20 @@
+{% set roundup = roundups | limit(1) %}
+{% set favouriteBookmarks = roundup.fields.links %}
+<article class="flow | gap-x-large">
+  <h2 class="gap-small">Favourites &mdash; <em>{{ roundup.fields.title }}</em></h2>
+  <section>
+    <ul class="measure flow">
+      {% for bookmark in favouriteBookmarks %}
+      <li>
+        <div class="gap-small">
+          <a href="{{ bookmark.fields.url }}" target="_blank" rel="noreferrer">
+            {{ bookmark.fields.title }}
+          </a>
+        </div>
+        <p>{% renderMarkdown bookmark.fields.notes %}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  <hr>
+</article>

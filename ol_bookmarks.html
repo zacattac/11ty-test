@@ -2,11 +2,6 @@
 layout: base
 title: Bookmarks
 theme: blue
-pagination:
-  data: bookmarks
-  size: 1
-  alias: year
-permalink: "bookmarks/{{ year.title }}.html"
 ---
 {% from '_includes/metaLink.html' import metaLink %}
 {% set content = pages | findByID("4bctuwqdqxtWxfaNXPLqaI") %}
@@ -40,7 +35,6 @@ permalink: "bookmarks/{{ year.title }}.html"
   <h2 class="gap-small">Favourites &mdash; <em>{{ roundup.fields.title }}</em></h2>
   <section>
     {% set favouriteBookmarks = roundup.fields.links %}
-    {% include "_includes/favouriteBookmarks.html" %}
   </section>
   <hr>
 </article>

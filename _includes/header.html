@@ -1,0 +1,20 @@
+<header class="flow | gap-x-large">
+  <h1 class="headline">{{ title }}</h1>
+  <div class="markdown | flow gap">
+    {% if description %}
+      <p>{{ description }}</p>
+    {% else %}
+      {{ content | safe }}
+    {% endif %}
+  </div>
+  <ul>
+    {% for link in headerLinks %}
+    <li class="arrow-link | tertiary-text">
+      <span class="pad-r-small">&rarr;</span>
+      <a href="{{ link.url }}" target="_blank" referrer="noreferrer" class="link">
+        {{ link.text }}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</header>

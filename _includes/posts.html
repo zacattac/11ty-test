@@ -1,16 +1,19 @@
-<ol class="flow | gap-large">
-  {% for post in collections.posts %}
-  <li>
-    <a
+<article id="posts" class="flow | gap-xx-large">
+  <h2>Posts</h2>
+  <ol class="flow | gap-large">
+    {% for post in collections.posts %}
+    <li>
+      <a
       href="{{ post.url }}"
       aria-label="Post: {{ post.title }}"
     >
-      {{ post.data.title }}
-    </a>
-    <p>
-      <span class="visually-hidden">Published:</span>
-      <em>{{ post.date | formatDate("long") }}</em>
-    </p>
-  </li>
-  {% endfor %}
-</ol>
+        {{ post.data.title }}
+      </a>
+      <p>
+        <span class="visually-hidden">Published:</span>
+        <em>{{ post.date | formatDate("long") }}</em>
+      </p>
+    </li>
+    {% endfor %}
+  </ol>
+</article>

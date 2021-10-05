@@ -9,5 +9,5 @@ layout: base
   </div>
 </header>
 <article class="markdown | flow | gap-xx-large">
-  {% renderMarkdown content %}
+  {{ content | safe }}
 </article>
