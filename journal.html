@@ -6,6 +6,7 @@ theme: yellow
 {% from "_includes/metaLink.html" import metaLink %}
 {% set content = pages | findByID("5sXnSwGVJePuWZpcOZvIML") %}
 {% set toc = ["Now", "Posts", "Listening", "Reading", "Scrapbook"] %}
+{% set now = collections.now | limit(1) %}
 {% set scrapbook = savee | limit(50) %}
 <header class="flow | gap-large">
   <h1>{{ content.fields.title }}</h1>
@@ -22,23 +23,11 @@ theme: yellow
 <article id="now" class="flow | gap-xx-large">
   <h2>Now</h2>
   <section class="markdown | flow">
-    {% renderMarkdown now.fields.contentMarkdown, assets %}
+    {{ now.templateContent | safe }}
   </section>
-  <details>
-    <summary class="gap">
-      <h3 class="subtitle | inline">Current Clients</h3>
-    </summary>
-    <div>
-      <ul>
-        {% for client in now.fields.currentClients %}
-        <li>{{ client }}</li>
-        {% endfor %}
-      </ul>
-    </div>
-  </details>
   <footer>
     <time datetime="{{ now.fields.date }}">
-      Last updated &ndash; {{ now.fields.date | formatDate }}
+      Last updated &ndash; {{ now.date | formatDate }}
     </time>
   </footer>
 </article>
