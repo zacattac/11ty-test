@@ -5,7 +5,6 @@ const pluginReadingTime = require("eleventy-plugin-reading-time");
 const findByID = require("./filters/findByID");
 const limit = require("./filters/limit");
 const date = require("./filters/date");
-const JsonStringify = require("./filters/json");
 const markdown = require("./shortcodes/markdown");
 const responsiveImage = require("./shortcodes/responsiveImage");
 const remark = require("./plugins/remark");
@@ -22,7 +21,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("findByID", findByID);
   eleventyConfig.addFilter("limit", limit);
   eleventyConfig.addFilter("formatDate", date);
-  eleventyConfig.addFilter("JSONStringify", JsonStringify);
 
   eleventyConfig.addShortcode("renderMarkdown", markdown);
   eleventyConfig.addShortcode("responsiveImage", responsiveImage);
