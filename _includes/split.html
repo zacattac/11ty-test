@@ -1,8 +1,0 @@
-<article class="columns gap-xx-large" style="--cols:2">
-  {{ split | log }}
-  {% for section in split %}
-  <section class="flow | gap-x-large">
-    {% include "_includes/" + section + ".html" %}
-  </section>
-  {% endfor %}
-</article>
