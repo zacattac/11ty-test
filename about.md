@@ -11,6 +11,7 @@ sections:
   - career
 headerLinks:
   - { url: "mailto:luke@interroban.gg", text: "Email" }
+  - { url: "https://twitter.com/lkemitchll", text: "Twitter" }
 heroImageID: "5ZI6Cx1N7O5KG8ikkg1wv7"
 toc:
   - History
