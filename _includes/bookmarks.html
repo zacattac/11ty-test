@@ -6,11 +6,13 @@
       <p class="tertiary-text">Filter:</p>
       <ul class="horizontal">
         {% for page in pagination.pages %}
-        <li>
-          <a class="link" href="/bookmarks{% if page.title != '2021' %}/{{ page.title }}{% endif %}#content" {{ "aria-current='page'" if currentPage.title == page.title }}>
-            {{ page.title }}
-          </a>
-        </li>
+          {% if page.title != "Current" %}
+            <li>
+              <a class="link" href="/bookmarks{% if page.title != '2021' %}/{{ page.title }}{% endif %}#content" {{ "aria-current='page'" if currentPage.title == page.title }}>
+                {{ page.title }}
+              </a>
+            </li>
+          {% endif %}
         {% endfor %}
       </ul>
     </nav>
