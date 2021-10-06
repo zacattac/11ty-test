@@ -1,18 +1,22 @@
+{% set currentPage = pagination.pages[pagination.pageNumber] %}
 <article id="content" class="flow | gap-xx-large" style="--row-gap: var(--space-small)">
   <header>
     <h2>{{ pagination.items[0].title }}</h2>
     <nav>
       <p class="tertiary-text">Filter:</p>
       <ul class="horizontal">
-        {% set currentPage = pagination.pages[pagination.pageNumber] %}
         {% for page in pagination.pages %}
-        <li><a class="link" href="/bookmarks/{{ page.title }}#content" {{ "aria-current='page'" if currentPage.title == page.title }}>{{ page.title }}</a></li>
+        <li>
+          <a class="link" href="/bookmarks{% if page.title != '2021' %}/{{ page.title }}{% endif %}#content" {{ "aria-current='page'" if currentPage.title == page.title }}>
+            {{ page.title }}
+          </a>
+        </li>
         {% endfor %}
       </ul>
     </nav>
   </header>
   <ul class="flow">
-    {% for bookmark in year.bookmarks %}
+    {% for bookmark in currentPage.bookmarks %}
     <li class="bookmark">
       <p class="tertiary-text">
         N&ordm; {{ bookmark.fields.number }}
