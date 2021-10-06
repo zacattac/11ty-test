@@ -2,6 +2,6 @@ const contentful = require("../providers/contentful");
 
 module.exports = async function list() {
   return contentful.client
-    .getEntries({ content_type: "list" })
-    .then((result) => result.items);
+    .getEntry("2uust09L73V2AcXwl3F80h")
+    .then((result) => result);
 };
