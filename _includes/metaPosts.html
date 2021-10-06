@@ -1,0 +1,19 @@
+<article id="posts" class="flow | gap">
+  <h2>Updates</h2>
+  <ol class="flow | gap-large">
+    {% for post in collections.metaPosts %}
+    <li>
+      <a
+      href="{{ post.url }}"
+      aria-label="Post: {{ post.title }}"
+    >
+        {{ post.data.title }}
+      </a>
+      <p>
+        <span class="visually-hidden">Published:</span>
+        <em>{{ post.date | formatDate("long") }}</em>
+      </p>
+    </li>
+    {% endfor %}
+  </ol>
+</article>
