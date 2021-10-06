@@ -5,9 +5,9 @@ const slug = require("remark-slug");
 const footnotes = require("remark-footnotes");
 const html = require("remark-html");
 const all = require("mdast-util-to-hast/lib/all");
-const customFootnotes = require("../helpers/footnotes");
-const references = require("../helpers/references");
-const imagesWithCaptions = require("../helpers/imagesWithCaptions");
+const customFootnotes = require("../plugins/remark/footnotes");
+const references = require("../plugins/remark/references");
+const imagesWithCaptions = require("../plugins/remark/imagesWithCaptions");
 
 const findByID = require("../filters/findByID");
 const responsiveImage = require("./responsiveImage");
