@@ -1,7 +1,22 @@
 <article class="columns gap-xx-large" style="--cols:2">
   <section class="flow | gap-x-large">
     <h2 class="title">Recent Posts</h2>
-    {% include "_includes/posts.html" %}
+    <ol class="flow | gap-large">
+      {% for post in collections.posts %}
+      <li>
+        <a
+        href="{{ post.url }}"
+        aria-label="Post: {{ post.title }}"
+      >
+          {{ post.data.title }}
+        </a>
+        <p>
+          <span class="visually-hidden">Published:</span>
+          <em>{{ post.date | formatDate("long") }}</em>
+        </p>
+      </li>
+      {% endfor %}
+    </ol>
     <a href="/journal" class="link">See all Posts</a>
   </section>
   <section class="flow">
@@ -12,11 +27,11 @@
       {% for bookmark in bookmarks %}
       <li>
         <a
-      href="{{ bookmark.fields.url }}"
-      target="_blank"
-      rel="noreferrer"
-      aria-label="Bookmark: {{ bookmark.fields.title }}"
-    >
+          href="{{ bookmark.fields.url }}"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Bookmark: {{ bookmark.fields.title }}"
+        >
           {{ bookmark.fields.title }}
         </a>
         <p>
@@ -26,6 +41,6 @@
       </li>
       {% endfor %}
     </ol>
-    <a href="/bookmarks/2021" class="link">See all Bookmarks</a>
+    <a href="/bookmarks" class="link">See all Bookmarks</a>
   </section>
 </article>
