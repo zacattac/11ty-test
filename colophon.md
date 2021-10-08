@@ -5,6 +5,7 @@ layout: page
 theme: pink
 sections:
   - header
+  - divider
   - metaPosts
   - commits
   - content

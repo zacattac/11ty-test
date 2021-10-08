@@ -5,5 +5,6 @@ layout: page
 theme: blue
 sections:
   - header
+  - divider
   - feeds
 ---

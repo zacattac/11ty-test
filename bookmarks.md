@@ -5,6 +5,7 @@ layout: page
 theme: blue
 sections:
   - header
+  - divider
   - favourites
   - bookmarks
 headerLinks:

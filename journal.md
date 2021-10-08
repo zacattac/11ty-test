@@ -5,6 +5,7 @@ layout: page
 theme: yellow
 sections:
   - header
+  - divider
   - toc
   - now
   - posts
