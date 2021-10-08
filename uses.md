@@ -1,12 +1,14 @@
 ---
 title: Uses
-description: This is a fairly living list of my design, development and personal setups. Including software, hardware and as much detail in between. This page follows many of those who have contributed to [uses.tech](https://uses.tech).
+description: This is a fairly living list of my design, development and personal setups. Including software, hardware and as much detail in between.
 layout: page
 theme: yellow
 sections:
   - header
   - hero
   - content
+headerLinks:
+  - { url: "https://uses.tech", text: "uses.tech" }
 heroImageID: "1c4JuakaETS6Z15ssCSTEF"
 ---
 
