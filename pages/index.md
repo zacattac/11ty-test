@@ -1,7 +1,6 @@
 ---
 title: Welcome
 description: false
-layout: page
 theme: green
 permalink: "/index.html"
 sections:

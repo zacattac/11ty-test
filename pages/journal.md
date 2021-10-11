@@ -1,7 +1,6 @@
 ---
 title: Journal
 description: false
-layout: page
 theme: yellow
 sections:
   - header

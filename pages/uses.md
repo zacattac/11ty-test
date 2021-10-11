@@ -1,7 +1,6 @@
 ---
 title: Uses
 description: This is a fairly living list of my design, development and personal setups. Including software, hardware and as much detail in between.
-layout: page
 theme: yellow
 sections:
   - header

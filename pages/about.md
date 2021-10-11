@@ -1,7 +1,6 @@
 ---
 title: About
 description: I've been a designer of one sort or another for 10 years. I'm currently a Design Director at thoughtbot.
-layout: page
 theme: pink
 sections:
   - header

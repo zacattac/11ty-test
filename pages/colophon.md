@@ -1,7 +1,6 @@
 ---
 title: Colophon
 description: This is a development blog, also a list of people, resources and tools that have made this site what it is. Check back regularly, as I try to keep this up-to-date, when I get time.
-layout: page
 theme: pink
 sections:
   - header
