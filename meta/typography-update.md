@@ -2,7 +2,6 @@
 title: Typography update
 date: 2021-07-18
 description: "After a lot of experimentation and staring at concepts, I have replaced GT America with Signifier, as my heading font."
-layout: markdown
 ---
 
 After a lot of experimentation and staring at concepts, I have replaced GT America with Signifier, as my heading font.
