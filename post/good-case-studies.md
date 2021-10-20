@@ -1,7 +1,6 @@
 ---
 title: Good case studies
 date: 2021-07-25
-layout: markdown
 ---
 I'm currently thinking about writing case studies for my work, I didn't know where to start, so I did what I do when starting any project, some research; I needed to define what I think makes a good case study.
 

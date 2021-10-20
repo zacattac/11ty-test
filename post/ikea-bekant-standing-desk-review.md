@@ -2,7 +2,6 @@
 title: "IKEA Bekant Standing Desk: Personal Review"
 date: 2020-09-21
 description: "My first impressions of the IKEA Bekant sit-stand desk."
-layout: markdown
 ---
 
 Since the lockdown, all of us at [thoughtbot](thoughtbot.com) have been working from home. I took the opportunity to upgrade my home setup. The biggest change was a new desk.
