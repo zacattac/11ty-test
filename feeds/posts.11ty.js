@@ -1,6 +1,7 @@
 class Posts {
   constructor() {
     this.filename = "posts.json";
+    this.endpoint = "https://interroban.gg";
   }
 
   data() {
@@ -12,7 +13,7 @@ class Posts {
   render(data) {
     const posts = data.collections.posts.map((post) => ({
       content_html: post.templateContent,
-      url: `https://interroban.gg/posts/${post.url}`,
+      url: `${this.endpoint}/posts/${post.url}`,
       summary: post.data.description,
       date_published: post.date,
       title: post.data.title,
@@ -23,12 +24,12 @@ class Posts {
       title: "Luke Mitchell | Product Designer",
       description:
         "Personal site, blog, and portfolio of Luke Mitchell, a design director, product designer, and UI developer.",
-      icon: "https://interroban.gg/assets/images/favicon.svg",
-      favicon: "https://interroban.gg/assets/images/favicon.svg",
-      authors: [{ name: "Luke Mitchell", url: "https://interroban.gg" }],
+      icon: `${this.endpoint}/assets/images/favicon.svg`,
+      favicon: `${this.endpoint}/assets/images/favicon.svg`,
+      authors: [{ name: "Luke Mitchell", url: this.endpoint }],
       language: "en",
-      home_page_url: "https://interroban.gg",
-      feed_url: "https://interroban.gg/feeds/posts.json",
+      home_page_url: this.endpoint,
+      feed_url: `${this.endpoint}/feeds/${this.filename}`,
       items: posts,
     };
 
